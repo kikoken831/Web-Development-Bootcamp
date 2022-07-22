@@ -1,6 +1,6 @@
-tools and technologies, including:
+# Tools and technologies included:
 
-Front-End Web Development
+## Front-End Web Development
 
 HTML 5
 
