@@ -1,18 +1,11 @@
-Array.from(document.querySelectorAll(".drum")).forEach(function(button){
-    button.addEventListener("click",function handleClick()
-    {
-        makeSound(this.innerHTML);
-
-        buttonAnimation(this.innerHTML);
-    })
+$(".drum").click(function (e) {
+   makeSound(this.innerHTML);
+   buttonAnimation(this.innerHTML);
 });
-
-document.addEventListener("keydown",function(event){
-    makeSound(event.key);
-    buttonAnimation(event.key);
+$(document).keydown(function (e) {
+    makeSound(e.key);
+    buttonAnimation(e.key);
 });
-
-
 
 
 function makeSound(key){
@@ -45,10 +38,9 @@ function makeSound(key){
 }
 
 function buttonAnimation(currentKey){
-    var activeButton = document.querySelector("." + currentKey);
-    console.log(activeButton);
-    activeButton.classList.add("pressed");
-    setTimeout(function() {
-        activeButton.classList.remove("pressed");
+
+    $("."+currentKey).addClass("pressed");
+    setTimeout(function(){
+        $("."+currentKey).removeClass("pressed");
     },100);
 }
